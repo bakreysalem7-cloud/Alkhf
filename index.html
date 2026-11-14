@@ -1,0 +1,610 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>مفردات الكهف</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: right-hand sidebar on iPad landscape, bottom tab bar in portrait. Quranic green + gold. */
+:root{
+  --bg:#EDF3EF; --surface:#FFFFFF; --surface2:#E3ECE6; --fg:#10231D; --muted:#566B62; --line:#CBD9D1;
+  --accent:#0D6B56; --accent-fg:#FFFFFF; --accent-soft:#D3EAE1; --gold:#9A6B0E; --gold-soft:#F3E5C2;
+  --good:#17784A; --good-soft:#D5EFDF; --bad:#B03A30; --bad-soft:#F8DAD5;
+  --ui:'Tajawal','Segoe UI',system-ui,-apple-system,sans-serif;
+  --quran:'Amiri Quran','Amiri','Traditional Arabic','Geeza Pro','Noto Naskh Arabic',serif;
+  --ws:1; --r:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#09130F; --surface:#112019; --surface2:#19291F; --fg:#E5F0EA; --muted:#8CA699; --line:#243A2F;
+  --accent:#3EB596; --accent-fg:#05120D; --accent-soft:#15352B; --gold:#E2B24C; --gold-soft:#3A2E13;
+  --good:#4DC48B; --good-soft:#153827; --bad:#F27C70; --bad-soft:#3E1E19; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#09130F; --surface:#112019; --surface2:#19291F; --fg:#E5F0EA; --muted:#8CA699; --line:#243A2F;
+  --accent:#3EB596; --accent-fg:#05120D; --accent-soft:#15352B; --gold:#E2B24C; --gold-soft:#3A2E13;
+  --good:#4DC48B; --good-soft:#153827; --bad:#F27C70; --bad-soft:#3E1E19; color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:17px;line-height:1.55;overflow:hidden;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;touch-action:manipulation}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#app{height:100%;display:flex;flex-direction:row;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));gap:20px}
+#nav{width:216px;flex:none;display:flex;flex-direction:column;gap:6px;padding:22px 0}
+#nav .brand{display:flex;align-items:center;gap:12px;padding:4px 10px 18px}
+#nav .brand i{width:44px;height:44px;border-radius:14px;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font:normal 26px/1 var(--quran)}
+#nav .brand b{font:700 21px/1.2 var(--quran);display:block}
+#nav .brand span{font-size:12.5px;color:var(--muted)}
+.nv{display:flex;align-items:center;gap:12px;min-height:50px;padding:0 14px;border-radius:14px;color:var(--muted);font-weight:500;text-align:right}
+.nv svg{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nv[aria-current="page"]{background:var(--accent-soft);color:var(--accent);font-weight:700}
+#nav .grow{flex:1}
+#main{flex:1;min-width:0;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px 4px 40px;scrollbar-width:thin}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+@media (max-width:899px){
+  #app{flex-direction:column-reverse;gap:0}
+  #nav{width:auto;flex-direction:row;padding:6px 0 4px;gap:2px;border-top:1px solid var(--line);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:8px}
+  #nav .brand,#nav .grow{display:none}
+  .nv{flex:1;flex-direction:column;gap:2px;min-height:56px;padding:4px 2px;justify-content:center;font-size:12.5px;text-align:center}
+  #main{padding-top:16px}
+}
+h1,h2,h3{margin:0;line-height:1.3}
+h1{font:700 30px/1.25 var(--ui)} h2{font:700 21px/1.3 var(--ui)} h3{font:700 17px/1.3 var(--ui)}
+.muted{color:var(--muted)} .small{font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.btn{min-height:52px;padding:0 24px;border-radius:15px;background:var(--surface2);font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line)}
+.btn.pri{background:var(--accent);color:var(--accent-fg);border-color:transparent}
+.btn.gold{background:var(--gold-soft);color:var(--gold);border-color:transparent}
+.btn.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.btn.good{background:var(--good-soft);color:var(--good);border-color:transparent}
+.btn.big{min-height:64px;font-size:19px;padding:0 32px}
+.btn:active{transform:scale(.98)}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:transparent;font-weight:700}
+.lbl{font-size:13px;letter-spacing:.02em;color:var(--muted);font-weight:700;margin-bottom:8px}
+.ay{display:inline-grid;place-items:center;min-width:38px;height:38px;padding:0 6px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font:700 15px/1 var(--ui);flex:none;font-variant-numeric:tabular-nums}
+.ay.sm{min-width:32px;height:32px;font-size:13px}
+.q{font-family:var(--quran);font-size:calc(34px*var(--ws));line-height:1.9}
+.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between;background:linear-gradient(135deg,var(--accent) 0%,color-mix(in srgb,var(--accent) 70%,#000) 100%);color:var(--accent-fg);border:0}
+.hero h1{font:400 clamp(34px,5vw,46px)/1.4 var(--quran)}
+.hero .btn{background:var(--surface);color:var(--accent);border:0}
+.hero .btn.ghost{background:rgba(255,255,255,.16);color:inherit}
+.hero .muted{color:inherit;opacity:.85}
+.ring{position:relative;width:112px;height:112px;flex:none}
+.ring svg{width:100%;height:100%}
+.ring .trk{fill:none;stroke:var(--surface2);stroke-width:10}
+.ring .val{fill:none;stroke:var(--accent);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .6s}
+.ring.gold .val{stroke:var(--gold)}
+.ring .rl{position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.2}
+.ring .rl b{font-size:25px;font-variant-numeric:tabular-nums} .ring .rl span{font-size:12.5px;color:var(--muted)}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat b{font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2}
+.bar{height:10px;border-radius:99px;background:var(--surface2);overflow:hidden;display:flex}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .4s}
+.bar i.l{background:var(--gold)} .bar i.r{background:#6BA8C9}
+.sec{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:16px;background:var(--surface);border:1px solid var(--line);text-align:right;width:100%}
+.sec .mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:7px}
+.sec b{font-size:17px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.dot.learning{background:var(--gold)} .dot.review{background:#6BA8C9} .dot.mastered{background:var(--good)}
+/* flashcards */
+.sess{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px;min-height:100%}
+.top{display:flex;align-items:center;gap:14px}
+.top .bar{flex:1}
+.fc{flex:1;min-height:330px;background:var(--surface);border:1px solid var(--line);border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px;text-align:center;position:relative;cursor:pointer;user-select:none}
+.fc .cw{font-family:var(--quran);font-size:calc(58px*var(--ws));line-height:1.8}
+.fc .cm{font-size:calc(30px*var(--ws));font-weight:500;line-height:1.7}
+.fc .ans{border-top:2px dashed var(--line);padding-top:16px;width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;animation:up .25s ease}
+.fc .ans .cm{color:var(--accent);font-weight:700}
+.fc .ans .cw{color:var(--accent)}
+.fc .tag{position:absolute;top:16px;inset-inline:18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hint{color:var(--muted);font-size:15px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.spk{width:48px;height:48px;border-radius:50%;background:var(--surface2);display:inline-grid;place-items:center;flex:none}
+.spk svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fav[aria-pressed="true"]{color:var(--gold)} .fav svg{fill:none} .fav[aria-pressed="true"] svg{fill:currentColor}
+/* quiz */
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:28px 24px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
+.qbox .q{font-size:calc(52px*var(--ws));line-height:1.7}
+.qbox .qm{font-size:calc(27px*var(--ws));font-weight:500;line-height:1.7}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{min-height:76px;padding:12px 18px;border-radius:18px;background:var(--surface);border:2px solid var(--line);font-size:19px;font-weight:500;line-height:1.55;display:flex;align-items:center;justify-content:center;text-align:center}
+.opt.w{font-family:var(--quran);font-size:calc(30px*var(--ws));line-height:1.8}
+.opt:active{background:var(--surface2)}
+.opt.right{background:var(--good-soft);border-color:var(--good);color:var(--good);font-weight:700}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.opt.dim{opacity:.55}
+.fb{border-radius:18px;padding:16px 20px;display:flex;flex-direction:column;gap:6px}
+.fb.ok{background:var(--good-soft);color:var(--good)} .fb.no{background:var(--bad-soft);color:var(--bad)}
+.fb .ex{color:var(--fg);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.fb .ex .qw{font-family:var(--quran);font-size:26px}
+.tin{width:100%;max-width:520px;min-height:64px;border-radius:18px;border:2px solid var(--line);background:var(--bg);color:var(--fg);font:500 calc(30px*var(--ws))/1.5 var(--quran);text-align:center;padding:6px 14px}
+.tm{font-variant-numeric:tabular-nums;font-weight:800;font-size:24px;min-width:64px;text-align:center}
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+.mt .col{display:flex;flex-direction:column;gap:12px}
+.mt .opt{min-height:66px;font-size:17px}
+.mt .opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.mt .opt.gone{visibility:hidden}
+.mt .opt.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(7px)}75%{transform:translateX(-7px)}}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mode{display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:right;padding:18px;border-radius:18px;background:var(--surface);border:1px solid var(--line);min-height:112px}
+.mode b{font-size:18px} .mode span{color:var(--muted);font-size:14.5px;line-height:1.5}
+.mode:active{background:var(--surface2)}
+.mode .ic{font:700 22px/1 var(--quran);color:var(--accent)}
+/* words */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:sticky;top:-22px;background:var(--bg);padding:10px 0;z-index:2}
+.inp,select.inp{min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:0 14px;font:inherit}
+.inp.s{flex:1;min-width:180px}
+.wl{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:10px}
+@media (max-width:520px){.wl{grid-template-columns:1fr}}
+.wr{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;min-height:76px}
+.wr .wd{font-family:var(--quran);font-size:calc(25px*var(--ws));min-width:128px;line-height:1.7}
+.wr .mn{flex:1;min-width:0;font-size:16px;line-height:1.55;text-align:right;padding:6px 4px;border-radius:10px}
+.wr .mn.hid{background:var(--surface2);color:transparent;user-select:none;position:relative}
+.wr .mn.hid::after{content:"اضغط لإظهار المعنى";color:var(--muted);position:absolute;inset:0;display:grid;place-items:center;font-size:14px}
+.wr .ib{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;flex:none;color:var(--muted)}
+.wr .ib svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* stats */
+.days{display:flex;gap:10px;align-items:flex-end;height:160px;padding-top:10px}
+.days .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
+.days .d i{width:100%;max-width:46px;border-radius:10px 10px 4px 4px;background:var(--accent);min-height:4px}
+.days .d i.z{background:var(--surface2)}
+.days .d span{font-size:12.5px;color:var(--muted)} .days .d em{font-style:normal;font-size:13px;font-weight:700}
+.badge{display:flex;gap:12px;align-items:center;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
+.badge .bi{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);color:var(--muted);font:700 20px/1 var(--quran);flex:none}
+.badge.on .bi{background:var(--gold-soft);color:var(--gold)}
+.badge:not(.on){opacity:.6}
+.badge span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block}
+textarea.inp{width:100%;min-height:90px;padding:10px 14px;font:13px/1.4 ui-monospace,monospace;direction:ltr;text-align:left}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:99px;font-weight:700;z-index:30;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw}
+#toast.on{opacity:1}
+.res{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px 20px}
+.stars{font-size:38px;letter-spacing:6px;color:var(--gold)}
+.miss{display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;background:var(--bad-soft);text-align:right;width:100%}
+.miss .qw{font-family:var(--quran);font-size:24px;min-width:130px} .miss span{flex:1;color:var(--fg);font-size:15.5px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div id="app" dir="rtl" lang="ar"><nav id="nav" aria-label="التنقل"></nav><main id="main"></main></div>
+<div id="toast" dir="rtl" role="status"></div>
+
+<script>
+/* ======================= البيانات: مستخرجة من كتاب «السراج في بيان غريب القرآن» ص ١٠٨–١١٥ ======================= */
+const RAW=[
+[1,"عِوَجًا","مَيْلًا عن الحق"],[2,"قَيِّمًا","مستقيمًا معتدلًا"],[2,"بَأْسًا","عذابًا"],[2,"مِن لَّدُنْهُ","من عنده"],
+[6,"بَاخِعٌ","مُهْلِكٌ"],[6,"أَسَفًا","حزنًا وغمًّا"],[8,"صَعِيدًا جُرُزًا","ترابًا لا نبات فيه"],
+[9,"وَالرَّقِيمِ","اللوح الذي كُتبت فيه أسماؤهم"],[10,"أَوَى","التجأ"],
+[11,"فَضَرَبْنَا عَلَى آذَانِهِمْ","ألقينا عليهم النوم العميق"],[12,"بَعَثْنَاهُمْ","أيقظناهم من نومهم"],
+[12,"الْحِزْبَيْنِ","الطائفتين المتنازعتين في مدّة لُبثهم"],[12,"أَمَدًا","مدّةً وغايةً"],
+[14,"وَرَبَطْنَا عَلَى قُلُوبِهِمْ","قوّينا قلوبهم بالإيمان وشددنا عزيمتهم به"],[14,"شَطَطًا","جائرًا بعيدًا عن الحق"],
+[15,"بِسُلْطَانٍ بَيِّنٍ","بحجّة واضحة"],[15,"افْتَرَى","اختلق"],
+[16,"مِرْفَقًا","ما تنتفعون به في حياتكم من أسباب العيش"],[17,"تَزَاوَرُ","تميل"],
+[17,"تَقْرِضُهُمْ","تتركهم وتتجاوز عنهم"],[17,"فَجْوَةٍ","متّسع"],[18,"بِالْوَصِيدِ","بفناء الكهف"],
+[18,"فِرَارًا","هربًا"],[19,"بِوَرِقِكُمْ","بنقودكم الفضية"],[19,"أَزْكَى","أحلّ وأطيب"],[20,"يَظْهَرُوا","يطّلعوا"],
+[21,"أَعْثَرْنَا عَلَيْهِمْ","أطلعنا عليهم أهل ذلك الزمان"],[21,"لَا رَيْبَ","لا شك"],
+[21,"الَّذِينَ غَلَبُوا","أصحاب النفوذ فيهم"],[22,"رَجْمًا بِالْغَيْبِ","قولًا بالظنّ من غير دليل"],
+[22,"فَلَا تُمَارِ فِيهِمْ","لا تُجادل في عدّتهم"],
+[22,"إِلَّا مِرَاءً ظَاهِرًا","جدالًا ظاهرًا لا عمق فيه، بأن تتلو ما أوحي إليك"],
+[24,"إِلَّا أَن يَشَاءَ اللَّهُ","إلا أن تعلّق قولك بالمشيئة فتقول: إن شاء الله"],
+[26,"أَبْصِرْ بِهِ وَأَسْمِعْ","ما أشدّ بصر الله بكل شيء وسمعه لكل شيء"],
+[27,"مُلْتَحَدًا","ملجأً تلجأ إليه"],[28,"بِالْغَدَاةِ وَالْعَشِيِّ","في الصباح والمساء"],
+[28,"وَلَا تَعْدُ عَيْنَاكَ","لا تصرف نظرك"],[28,"فُرُطًا","هلاكًا وضياعًا"],[29,"سُرَادِقُهَا","سورها"],
+[29,"كَالْمُهْلِ","كالزيت العكر"],[29,"وَسَاءَتْ مُرْتَفَقًا","قَبُحت منزلًا ومقامًا"],[31,"عَدْنٍ","إقامة"],
+[31,"سُندُسٍ","رقيق الحرير"],[31,"وَإِسْتَبْرَقٍ","غليظ الحرير"],
+[31,"الْأَرَائِكِ","الأسِرّة المزيّنة بالستور الجميلة"],[32,"جَنَّتَيْنِ","حديقتين"],[32,"وَحَفَفْنَاهُمَا","أحطناهما"],
+[33,"آتَتْ أُكُلَهَا","أثمرت ثمرها"],[33,"تَظْلِمْ","تنقص"],[33,"خِلَالَهُمَا","بينهما"],
+[34,"ثَمَرٌ","ثمار وأموال أخرى كثيرة"],[34,"نَفَرًا","أنصارًا وأعوانًا"],[35,"مَا أَظُنُّ","لا أعتقد"],
+[35,"تَبِيدَ","تهلك"],[36,"مُنقَلَبًا","مرجعًا ومردًّا"],[38,"لَكِنَّا","لكنْ أنا"],[40,"حُسْبَانًا","عذابًا"],
+[40,"صَعِيدًا زَلَقًا","أرضًا ملساء جرداء لا تثبت عليها قدم ولا تُنبت شيئًا"],[41,"غَوْرًا","غائرًا ذاهبًا في عمق الأرض"],
+[42,"وَأُحِيطَ بِثَمَرِهِ","أُهلكت أمواله وحديقته"],[42,"يُقَلِّبُ كَفَّيْهِ","كناية عن الندامة والحسرة"],
+[42,"خَاوِيَةٌ عَلَى عُرُوشِهَا","ساقطة بعضها على بعض"],[43,"فِئَةٌ","جماعة"],[44,"عُقْبًا","عاقبةً"],
+[45,"هَشِيمًا","يابسًا متكسّرًا"],[45,"تَذْرُوهُ","تنسفه الرياح إلى كل جهة"],
+[46,"وَالْبَاقِيَاتُ الصَّالِحَاتُ","الأعمال الصالحة"],[46,"وَخَيْرٌ أَمَلًا","خير ما يُرجى عند الله"],
+[47,"بَارِزَةً","ظاهرة، ليس عليها ما كان يستُرها من المخلوقات"],[47,"وَحَشَرْنَاهُمْ","جمعناهم"],
+[47,"فَلَمْ نُغَادِرْ","لم نترك"],[48,"صَفًّا","مصطفّين"],
+[49,"وَوُضِعَ الْكِتَابُ","كتاب أعمال كلّ واحد في يمينه أو شماله"],[49,"لَا يُغَادِرُ","لا يترك"],[49,"حَاضِرًا","مثبتًا"],
+[50,"فَفَسَقَ","فخرج"],[50,"أَوْلِيَاءَ","أعوانًا تطيعونهم"],[51,"عَضُدًا","أعوانًا"],
+[52,"مَوْبِقًا","مهلكًا في جهنم يهلكون فيه جميعًا"],[53,"فَظَنُّوا","أيقنوا"],[53,"مُوَاقِعُوهَا","واقعون فيها"],
+[53,"مَصْرِفًا","مكانًا ينصرفون إلى غيره"],[54,"صَرَّفْنَا","وضّحنا ونوّعنا"],
+[55,"سُنَّةُ الْأَوَّلِينَ","إهلاك المكذّبين"],[55,"قُبُلًا","عِيَانًا"],[56,"لِيُدْحِضُوا","ليُزيلوا"],
+[57,"أَكِنَّةً","أغطية"],[57,"وَقْرًا","صممًا وثقلًا في السمع"],[58,"مَوْئِلًا","ملجأً ومخلصًا"],
+[60,"لِفَتَاهُ","لخادمه يوشع بن نون"],[60,"لَا أَبْرَحُ","لا أزال أتابع المسير"],[60,"مَجْمَعَ","ملتقى"],
+[60,"حُقُبًا","زمنًا طويلًا"],[61,"فَاتَّخَذَ سَبِيلَهُ","فأصبح الحوت حيًّا، واتخذ طريقًا في البحر"],
+[61,"سَرَبًا","طريقًا مفتوحًا في الماء"],[62,"نَصَبًا","تعبًا"],[63,"أَرَأَيْتَ","أتذكر؟"],[63,"أَوَيْنَا","لجأنا"],
+[64,"نَبْغِ","نطلب"],[64,"فَارْتَدَّا","فرجعا"],[64,"عَلَى آثَارِهِمَا قَصَصًا","يتتبعان آثار مشيهما"],
+[65,"فَوَجَدَا عَبْدًا","هو الخضر عليه السلام"],[65,"مِن لَّدُنَّا","من عندنا"],
+[68,"لَمْ تُحِطْ بِهِ خُبْرًا","ما يخفى عليك علمه"],[71,"خَرَقَهَا","قلع لوحًا من ألواحها"],[71,"إِمْرًا","أمرًا مُنكرًا"],
+[73,"وَلَا تُرْهِقْنِي","لا تُكلّفني"],[74,"زَكِيَّةً","طاهرة لم تبلغ حدّ التكليف"],[74,"نُكْرًا","مُنكرًا عظيمًا"],
+[77,"اسْتَطْعَمَا أَهْلَهَا","طلبا طعامًا على سبيل الضيافة"],[77,"يُرِيدُ أَن يَنقَضَّ","يوشك أن يسقط"],
+[78,"بِتَأْوِيلِ","بمآل وعاقبة"],[79,"وَرَاءَهُم","أمامهم"],[79,"كُلَّ سَفِينَةٍ","كل سفينة صالحة"],
+[80,"يُرْهِقَهُمَا","يُكلّفهما ويحملهما"],[81,"زَكَاةً","صلاحًا وطهارة"],[81,"وَأَقْرَبَ رُحْمًا","برًّا بهما ورحمة عليهما"],
+[82,"يَبْلُغَا أَشُدَّهُمَا","يكبرا ويبلغا قوتهما"],[82,"تَسْطِعْ","تستطع"],
+[83,"ذِي الْقَرْنَيْنِ","ملك صالح عادل مَلَكَ ما بين المشرق والمغرب"],
+[84,"سَبَبًا","أسبابًا وطرقًا توصله إلى ما يريد من فتح المدن وقهر الأعداء"],
+[85,"فَأَتْبَعَ سَبَبًا","أخذ جادًّا بالأسباب والطرق الموصلة إلى ما يريد بجدّ"],
+[86,"وَجَدَهَا","أي: وجدها كذلك في نظر العين"],[86,"حَمِئَةٍ","حارّة ذات طين أسود"],[87,"نُكْرًا","عظيمًا"],
+[88,"الْحُسْنَى","الجنّة"],[91,"خُبْرًا","علمًا"],[93,"السَّدَّيْنِ","الجبلين الحاجزين لما وراءهما"],
+[94,"يَأْجُوجَ وَمَأْجُوجَ","هما أمّتان عظيمتان كثيرتا العدد من بني آدم"],[94,"خَرْجًا","أجرًا"],[95,"رَدْمًا","سدًّا"],
+[96,"زُبَرَ الْحَدِيدِ","قطع الحديد العظيمة"],[96,"الصَّدَفَيْنِ","جانبي الجبلين"],[96,"قِطْرًا","نحاسًا مُذابًا"],
+[97,"يَظْهَرُوهُ","يصعدوا فوق السدّ"],[97,"نَقْبًا","خرقًا"],[98,"دَكَّاءَ","مُنهدمًا مستويًا بالأرض"],
+[99,"يَمُوجُ","يختلط ويضطرب"],[99,"وَنُفِخَ","هي النفخة الثانية، وهي نفخة البعث"],
+[99,"الصُّورِ","القرن الذي ينفخ فيه إسرافيل"],[100,"وَعَرَضْنَا","أبرزنا"],[102,"نُزُلًا","منزلًا"],
+[105,"فَحَبِطَتْ","فبطلت"],[105,"وَزْنًا","قدرًا"],[107,"جَنَّاتُ الْفِرْدَوْسِ","هي أعلى الجنة وأوسطها وأفضلها"],
+[108,"حِوَلًا","تحوّلًا"],[109,"لَنَفِدَ","لَفَنِيَ وفَرَغَ"],[109,"مَدَدًا","حِبرًا"]
+];
+const SECS=[["مقدمة السورة",1,8],["أصحاب الكهف",9,26],["وصايا وتوجيهات",27,31],["صاحب الجنتين",32,44],["مشاهد الدنيا والآخرة",45,59],["موسى والخضر",60,82],["ذو القرنين",83,99],["خاتمة السورة",100,110]];
+const W=RAW.map((r,i)=>({id:i,ayah:r[0],word:r[1],mean:r[2],sec:SECS.findIndex(s=>r[0]>=s[1]&&r[0]<=s[2])}));
+const N=W.length;
+
+/* ======================= أدوات ======================= */
+const $=s=>document.querySelector(s);
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const norm=s=>s.replace(/[ً-ٰٟۖ-ۭـ]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/\s+/g,' ').trim();
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const key=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today=()=>key(new Date());
+const MIN=60000,DAY=86400000,INTV=[0,10*MIN,DAY,3*DAY,7*DAY,16*DAY];
+const IC={
+ home:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+ cards:'<rect x="3" y="6" width="14" height="14" rx="2.5"/><path d="M7 3h12a2 2 0 012 2v12"/>',
+ quiz:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2"/><path d="M12 17h.01"/>',
+ list:'<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>',
+ chart:'<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>',
+ gear:'<circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 00-2-1.2L14.2 3h-4l-.4 2.7a7 7 0 00-2 1.2l-2.3-1-2 3.4 2 1.5a7 7 0 000 2.4l-2 1.5 2 3.4 2.3-1a7 7 0 002 1.2l.4 2.7h4l.4-2.7a7 7 0 002-1.2l2.3 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/>',
+ spk:'<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/>',
+ star:'<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8L12 3.5z"/>'
+};
+const svg=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+
+/* ======================= الحالة والتخزين ======================= */
+const KEY='kahf-vocab-v1';
+const def=()=>({w:{},days:{},xp:0,perfect:0,best:{},set:{theme:'auto',size:1,goal:20,newPerDay:8,dir:'w2m',tts:true}});
+let S=def();
+try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j.w==='object'){S={...def(),...j,set:{...def().set,...(j.set||{})}}}}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const dayRec=()=>S.days[today()]||(S.days[today()]={r:0,c:0,n:0});
+const wst=id=>S.w[id]||null;
+const status=id=>{const w=wst(id);if(!w||!w.seen)return'new';return w.box>=4?'mastered':w.box===3?'review':'learning'};
+const SN={new:'جديدة',learning:'قيد التعلّم',review:'قيد المراجعة',mastered:'متقنة'};
+function record(id,ok){
+  const w=S.w[id]||(S.w[id]={box:0,due:0,seen:0,ok:0,bad:0,fav:0});
+  const D=dayRec();const t=Date.now();
+  if(!w.seen)D.n++;
+  w.seen++;D.r++;
+  if(ok){w.ok++;D.c++;S.xp+=2;
+    if(w.box===0)w.box=2;else if(w.due<=t)w.box=Math.min(5,w.box+1);else return save();
+  }else{w.bad++;w.box=1}
+  w.due=t+INTV[w.box];save();
+}
+const dueIds=()=>W.filter(w=>{const s=wst(w.id);return s&&s.seen&&s.due<=Date.now()}).map(w=>w.id);
+const newIds=()=>W.filter(w=>{const s=wst(w.id);return !s||!s.seen}).map(w=>w.id);
+const weakIds=()=>W.filter(w=>{const s=wst(w.id);return s&&s.bad>0&&s.box<=2}).map(w=>w.id);
+const favIds=()=>W.filter(w=>{const s=wst(w.id);return s&&s.fav}).map(w=>w.id);
+const masteredN=()=>W.filter(w=>status(w.id)==='mastered').length;
+const seenN=()=>W.filter(w=>status(w.id)!=='new').length;
+function streak(){let k=0;const d=new Date();if(!(S.days[key(d)]&&S.days[key(d)].r))d.setDate(d.getDate()-1);while(S.days[key(d)]&&S.days[key(d)].r){k++;d.setDate(d.getDate()-1)}return k}
+const LV=['مبتدئ','متعلّم','دارس مجتهد','حافظ للمعاني','متقن','فارس الكهف'];
+const level=()=>{const l=Math.floor(S.xp/120);return{n:l+1,title:LV[Math.min(l,LV.length-1)],into:S.xp%120}};
+function scopeIds(sc){
+  if(sc==='all')return W.map(w=>w.id);
+  if(sc==='due')return dueIds();if(sc==='new')return newIds();if(sc==='weak')return weakIds();if(sc==='fav')return favIds();
+  if(sc[0]==='s')return W.filter(w=>w.sec===+sc.slice(1)).map(w=>w.id);
+  return[];
+}
+const scopeName=sc=>({all:'كل السورة',due:'المستحقة للمراجعة',new:'الجديدة',weak:'الصعبة',fav:'المفضلة'}[sc]||SECS[+sc.slice(1)][0]);
+function say(text){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ar-SA';u.rate=.75;speechSynthesis.speak(u)}catch(e){}}
+const canSay=()=>{try{return S.set.tts&&'speechSynthesis' in window}catch(e){return false}};
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2200)}
+function applyPrefs(){
+  const r=document.documentElement;r.dir='rtl';r.lang='ar';
+  if(S.set.theme==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',S.set.theme);
+  r.style.setProperty('--ws',S.set.size);
+}
+
+/* ======================= التنقل ======================= */
+const VIEWS=[['home','الرئيسية','home'],['learn','البطاقات','cards'],['quiz','الاختبارات','quiz'],['words','المفردات','list'],['stats','تقدّمي','chart'],['settings','الإعدادات','gear']];
+let view='home',session=null,qs={scope:'all',count:10},ls={scope:null},wf={q:'',sec:'all',st:'all',hide:false};
+function go(v){endSession(true);view=v;try{history.replaceState(null,'','#'+v)}catch(e){}render();$('#main').scrollTop=0}
+function nav(){
+  $('#nav').innerHTML=`<div class="brand"><i>ك</i><div><b>مفردات الكهف</b><span>غريب القرآن</span></div></div>`+
+   VIEWS.map(v=>`<button class="nv" data-a="go" data-v="${v[0]}" ${v[0]===view&&!session?'aria-current="page"':''}>${svg(v[2])}<span>${v[1]}</span></button>`).join('');
+}
+function render(){nav();const m=$('#main');
+  if(session){m.innerHTML=({cards:rCards,quiz:rQuiz,match:rMatch,result:rResult})[session.type]();if(session.type==='quiz'&&session.kind==='type'&&!session.fb){const i=$('#tin');i&&i.focus()}return}
+  m.innerHTML=({home:rHome,learn:rLearn,quiz:rQuizSetup,words:rWords,stats:rStats,settings:rSettings})[view]();
+}
+
+/* ======================= الرئيسية ======================= */
+function ring(p,label,sub,cls){const r=42,c=2*Math.PI*r;return`<div class="ring ${cls||''}"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="val" cx="50" cy="50" r="42" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-Math.min(1,p))}" transform="rotate(-90 50 50)"/></svg><div class="rl"><b>${label}</b><span>${sub}</span></div></div>`}
+function plan(){const due=dueIds();const quota=Math.max(0,S.set.newPerDay-dayRec().n);return{due,nw:newIds().slice(0,quota)}}
+function rHome(){
+  const p=plan(),D=dayRec(),m=masteredN(),L=level(),st=streak();
+  const total=p.due.length+p.nw.length;
+  const hello=new Date().getHours()<12?'صباح الخير':new Date().getHours()<18?'طاب يومك':'مساء الخير';
+  return`<div class="wrap">
+  <div class="card hero"><div style="min-width:260px;flex:1">
+    <div class="small muted">${hello}، هذه خطتك اليوم</div>
+    <h1>سورة الكهف</h1>
+    <div class="muted" style="margin-top:6px">${total?`${ar(p.due.length)} للمراجعة · ${ar(p.nw.length)} كلمة جديدة`:'أنجزت خطة اليوم. يمكنك التدرّب بحرّية.'}</div>
+    <div class="row" style="margin-top:18px">
+      ${total?`<button class="btn big" data-a="today">ابدأ جلسة اليوم</button>`:`<button class="btn big" data-a="go" data-v="quiz">اختبر نفسك</button>`}
+      <button class="btn big ghost" data-a="quick">اختبار سريع</button>
+    </div></div>
+    </div></div>
+  <div class="grid g3">
+    <div class="card row" style="justify-content:space-between;flex-wrap:nowrap;gap:12px">${ring(N?m/N:0,ar(Math.round(N?m/N*100:0))+'٪','متقنة')}<div class="stat"><span class="muted small">كلمات متقنة</span><b>${ar(m)} / ${ar(N)}</b><span class="small muted">بدأت بـ ${ar(seenN())} كلمة</span></div></div>
+    <div class="card row" style="justify-content:space-between;flex-wrap:nowrap;gap:12px">${ring(D.r/S.set.goal,ar(D.r),'من '+ar(S.set.goal),'gold')}<div class="stat"><span class="muted small">هدف اليوم</span><b>${D.r>=S.set.goal?'تحقق ✓':ar(Math.max(0,S.set.goal-D.r))+' متبقية'}</b><span class="small muted">صحيحة اليوم: ${ar(D.c)}</span></div></div>
+    <div class="card" style="display:flex;flex-direction:column;gap:12px;justify-content:center">
+      <div class="row" style="justify-content:space-between"><div class="stat"><span class="muted small">أيام متتالية</span><b>${ar(st)}</b></div><div class="stat" style="text-align:left"><span class="muted small">المستوى ${ar(L.n)}</span><b style="font-size:19px">${L.title}</b></div></div>
+      <div class="bar" title="التقدم نحو المستوى التالي"><i class="l" style="width:${L.into/120*100}%"></i></div>
+    </div>
+  </div>
+  <div><h2 style="margin-bottom:12px">تدرّب بطريقتك</h2>
+  <div class="grid g4">
+    <button class="mode" data-a="startQuiz" data-k="speed" data-sc="all"><span class="ic">٦٠</span><b>تحدي السرعة</b><span>أجب عن أكبر عدد في دقيقة</span></button>
+    <button class="mode" data-a="startQuiz" data-k="match" data-sc="all"><span class="ic">⇄</span><b>مطابقة</b><span>صِل الكلمة بمعناها</span></button>
+    <button class="mode" data-a="startQuiz" data-k="ayah" data-sc="all"><span class="ic">﴿ ﴾</span><b>في أي آية؟</b><span>اربط الكلمة بموضعها</span></button>
+    <button class="mode" data-a="startScope" data-sc="${weakIds().length?'weak':'all'}"><span class="ic">!</span><b>الكلمات الصعبة</b><span>${ar(weakIds().length)} كلمة تحتاج تركيزًا</span></button>
+  </div></div>
+  <div><h2 style="margin-bottom:12px">مقاطع السورة</h2><div class="grid g2">
+  ${SECS.map((s,i)=>{const ids=scopeIds('s'+i),m2=ids.filter(id=>status(id)==='mastered').length,l2=ids.filter(id=>['learning','review'].includes(status(id))).length;
+   return`<button class="sec" data-a="startScope" data-sc="s${i}"><span class="ay sm">${ar(s[1])}</span><div class="mid"><div class="row" style="justify-content:space-between;gap:8px"><b>${s[0]}</b><span class="small muted">${ar(m2)} / ${ar(ids.length)}</span></div><div class="bar"><i style="width:${ids.length?m2/ids.length*100:0}%"></i><i class="l" style="width:${ids.length?l2/ids.length*100:0}%"></i></div></div></button>`}).join('')}
+  </div></div>
+  <div class="small muted" style="text-align:center">المصدر: كتاب «السراج في بيان غريب القرآن»، د. محمد بن عبد العزيز الخضيري، كرسي القرآن الكريم وعلومه، جامعة الملك سعود (ص ١٠٨–١١٥).</div>
+  </div>`;
+}
+
+/* ======================= البطاقات ======================= */
+function scopeChips(cur,act,extra){
+  const base=[['due','المستحقة'],['new','الجديدة'],['weak','الصعبة'],['fav','المفضلة'],['all','الكل']];
+  return`<div class="chips">${base.map(([k,l])=>`<button class="chip" aria-pressed="${cur===k}" data-a="${act}" data-sc="${k}">${l} <span class="small" style="opacity:.8">${ar(scopeIds(k).length)}</span></button>`).join('')}
+  ${SECS.map((s,i)=>`<button class="chip" aria-pressed="${cur==='s'+i}" data-a="${act}" data-sc="s${i}">${s[0]}</button>`).join('')}</div>`;
+}
+function rLearn(){
+  if(!ls.scope)ls.scope=dueIds().length?'due':'new';
+  const n=scopeIds(ls.scope).length;
+  return`<div class="wrap"><div><h1>البطاقات</h1><div class="muted">اقلب البطاقة، ثم قيّم نفسك. الكلمات التي تخطئ فيها تعود أسرع.</div></div>
+  <div class="card"><div class="lbl">ماذا تريد أن تراجع؟</div>${scopeChips(ls.scope,'lsc')}
+  <div class="lbl" style="margin-top:20px">اتجاه البطاقة</div>
+  <div class="chips"><button class="chip" aria-pressed="${S.set.dir==='w2m'}" data-a="dir" data-d="w2m">الكلمة ← المعنى</button><button class="chip" aria-pressed="${S.set.dir==='m2w'}" data-a="dir" data-d="m2w">المعنى ← الكلمة</button></div>
+  <div class="row" style="margin-top:24px"><button class="btn pri big" data-a="startLs" ${n?'':'disabled'}>ابدأ (${ar(n)} كلمة)</button>${n?'':'<span class="muted">لا توجد كلمات في هذا القسم الآن.</span>'}</div></div></div>`;
+}
+function startCards(ids,title){
+  if(!ids.length)return toast('لا توجد كلمات');
+  session={type:'cards',title,queue:shuf(ids),i:0,rev:false,ok:0,bad:0,retry:new Set(),missed:new Set(),done:0};render();
+}
+function rCards(){
+  const s=session,id=s.queue[s.i],w=W[id],f=wst(id)&&wst(id).fav,dir=S.set.dir;
+  const front=dir==='w2m'?`<div class="cw">${w.word}</div>`:`<div class="cm">${w.mean}</div>`;
+  const back=dir==='w2m'?`<div class="cm">${w.mean}</div>`:`<div class="cw">${w.word}</div>`;
+  return`<div class="sess"><div class="top"><button class="btn" data-a="end">إنهاء</button><div class="bar"><i style="width:${s.i/s.queue.length*100}%"></i></div><span class="small muted">${ar(s.i+1)} / ${ar(s.queue.length)}</span></div>
+  <div class="fc" data-a="rev" tabindex="0" role="button" aria-label="اقلب البطاقة">
+    <div class="tag"><span class="ay">${ar(w.ayah)}</span><span class="small muted">${SECS[w.sec][0]}</span>
+      <span class="row" style="gap:8px">${canSay()?`<button class="spk" data-a="say" data-id="${id}" aria-label="استمع">${svg('spk')}</button>`:''}<button class="spk fav" aria-pressed="${!!f}" data-a="fav" data-id="${id}" aria-label="مفضلة">${svg('star')}</button></span></div>
+    ${front}${s.rev?`<div class="ans">${back}<span class="hint">الآية ${ar(w.ayah)} · ${SECS[w.sec][0]}</span></div>`:`<div class="hint">اضغط لإظهار الجواب</div>`}
+  </div>
+  ${s.rev?`<div class="acts"><button class="btn bad big" data-a="grade" data-ok="0">لم أعرفها</button><button class="btn good big" data-a="grade" data-ok="1">عرفتها</button></div>`:`<button class="btn pri big" data-a="rev">أظهر الجواب</button>`}</div>`;
+}
+function grade(ok){
+  const s=session,id=s.queue[s.i];
+  if(!s.retry.has(id))record(id,ok);
+  if(ok)s.ok++;else{s.bad++;s.missed.add(id);if(!s.retry.has(id)){s.retry.add(id);s.queue.push(id)}}
+  s.i++;s.rev=false;
+  if(s.i>=s.queue.length)finish({title:s.title||'البطاقات',score:s.ok,total:s.ok+s.bad,missed:[...s.missed],again:()=>startCards(s.queue.filter((x,i,a)=>a.indexOf(x)===i),s.title)});else render();
+}
+
+/* ======================= الاختبارات ======================= */
+const MODES=[
+ ['mc_w2m','الكلمة ← المعنى','اختر المعنى الصحيح','أ'],['mc_m2w','المعنى ← الكلمة','اختر الكلمة المناسبة للمعنى','ب'],
+ ['ayah','في أي آية؟','حدّد رقم الآية التي وردت فيها الكلمة','﴿ ﴾'],['tf','صح أم خطأ','هل المعنى المعروض صحيح؟','✓'],
+ ['type','اكتب الكلمة','اكتب الكلمة من معناها','✎'],['match','مطابقة','صِل كل كلمة بمعناها','⇄'],
+ ['speed','تحدي ٦٠ ثانية','أكبر عدد من الإجابات الصحيحة','٦٠'],['mix','اختبار شامل','أنواع متنوعة من الأسئلة','★']];
+function rQuizSetup(){
+  const n=scopeIds(qs.scope).length;
+  return`<div class="wrap"><div><h1>الاختبارات</h1><div class="muted">كل إجابة تُحسب في جدول المراجعة، فتتقدّم الكلمات الصحيحة وتعود الخاطئة.</div></div>
+  <div class="card"><div class="lbl">نطاق الأسئلة</div>${scopeChips(qs.scope,'qsc')}
+  <div class="lbl" style="margin-top:18px">عدد الأسئلة</div><div class="chips">${[10,20,30,0].map(c=>`<button class="chip" aria-pressed="${qs.count===c}" data-a="qcount" data-c="${c}">${c?ar(c):'الكل'}</button>`).join('')}</div>
+  ${n<4?`<div class="small" style="color:var(--bad);margin-top:12px">اختر نطاقًا فيه ٤ كلمات على الأقل.</div>`:''}</div>
+  <div class="grid g4">${MODES.map(m=>`<button class="mode" data-a="startQuiz" data-k="${m[0]}" data-sc="${qs.scope}" ${n<4?'disabled style="opacity:.5"':''}><span class="ic">${m[3]}</span><b>${m[1]}</b><span>${m[2]}</span></button>`).join('')}</div></div>`;
+}
+function pickOthers(id,k,test){const out=[];for(const w of shuf(W)){if(w.id===id)continue;if(test(w)&&!out.find(o=>test(o)===test(w))){out.push(w);if(out.length>=k)break}}return out}
+function mkQ(kind,id,pool){
+  const w=W[id];
+  if(kind==='mix')kind=['mc_w2m','mc_m2w','tf','ayah'][Math.floor(Math.random()*4)];
+  if(kind==='type'&&w.word.split(' ').length>2)kind='mc_m2w';
+  if(kind==='mc_w2m'){const o=shuf([w,...pickOthers(id,3,x=>x.mean!==w.mean?x.mean:null)]);return{kind,id,q:`<div class="q">${w.word}</div>`,sub:'ما معنى هذه الكلمة؟',opts:o.map(x=>x.mean),ans:o.indexOf(w),ot:''}}
+  if(kind==='mc_m2w'){const o=shuf([w,...pickOthers(id,3,x=>norm(x.word)!==norm(w.word)?norm(x.word):null)]);return{kind,id,q:`<div class="qm">${w.mean}</div>`,sub:'ما الكلمة التي معناها؟',opts:o.map(x=>x.word),ans:o.indexOf(w),ot:'w'}}
+  if(kind==='ayah'){let set=new Set([w.ayah]);const c=shuf(Array.from({length:110},(_,i)=>i+1).filter(a=>Math.abs(a-w.ayah)<=14&&a!==w.ayah));c.slice(0,3).forEach(a=>set.add(a));const o=[...set].sort((a,b)=>a-b);return{kind,id,q:`<div class="q">${w.word}</div>`,sub:'في أي آية وردت هذه الكلمة؟',opts:o.map(a=>'الآية '+ar(a)),ans:o.indexOf(w.ayah),ot:''}}
+  if(kind==='tf'){const t=Math.random()<.5;const o=t?w:pickOthers(id,1,x=>x.mean!==w.mean?x.mean:null)[0];return{kind,id,q:`<div class="q">${w.word}</div><div class="qm" style="color:var(--accent)">${o.mean}</div>`,sub:'هل هذا المعنى صحيح؟',opts:['صحيح','خطأ'],ans:t?0:1,ot:''}}
+  if(kind==='type')return{kind,id,q:`<div class="qm">${w.mean}</div>`,sub:'اكتب الكلمة (التشكيل اختياري)',typed:true};
+}
+function startQuiz(kind,sc,count){
+  const ids=scopeIds(sc);if(ids.length<4&&kind!=='type')return toast('اختر نطاقًا فيه ٤ كلمات على الأقل');
+  if(kind==='match')return startMatch(ids,count);
+  if(kind==='speed'){session={type:'quiz',kind,title:'تحدي ٦٠ ثانية',pool:ids,i:0,score:0,total:0,missed:new Set(),fb:null,end:Date.now()+60000,last:-1,q:null,list:null,sc};nextSpeed();render();session.tm=setInterval(tick,250);return}
+  const n=count?Math.min(count,ids.length):ids.length;
+  const pick=shuf(ids).slice(0,n);
+  const list=pick.map(id=>mkQ(kind,id));
+  session={type:'quiz',kind,title:MODES.find(m=>m[0]===kind)[1],list,i:0,score:0,total:n,missed:new Set(),fb:null,sc,count};render();
+}
+function nextSpeed(){let id;do{id=session.pool[Math.floor(Math.random()*session.pool.length)]}while(id===session.last&&session.pool.length>1);session.last=id;session.q=mkQ(Math.random()<.5?'mc_w2m':'mc_m2w',id);}
+function tick(){const s=session;if(!s||s.kind!=='speed'){return}const left=Math.max(0,Math.ceil((s.end-Date.now())/1000));const e=$('#tm');if(e)e.textContent=ar(left);if(left<=0){clearInterval(s.tm);finishSpeed()}}
+function finishSpeed(){const s=session;if(S.best.speed==null||s.score>S.best.speed){S.best.speed=s.score;save();}finish({title:s.title,score:s.score,total:s.total,missed:[...s.missed],speed:true,again:()=>startQuiz('speed',s.sc)})}
+function curQ(){return session.kind==='speed'?session.q:session.list[session.i]}
+function rQuiz(){
+  const s=session,q=curQ(),sp=s.kind==='speed',fb=s.fb,w=W[q.id];
+  const head=`<div class="top"><button class="btn" data-a="end">إنهاء</button>${sp?`<div class="bar"><i class="l" style="width:${Math.max(0,(s.end-Date.now())/600)}%"></i></div><span class="tm" id="tm">${ar(Math.max(0,Math.ceil((s.end-Date.now())/1000)))}</span><b>${ar(s.score)}</b>`:`<div class="bar"><i style="width:${s.i/s.total*100}%"></i></div><span class="small muted">${ar(s.i+1)} / ${ar(s.total)}</span>`}</div>`;
+  let body;
+  if(q.typed){body=`<div class="qbox"><div class="small muted">${q.sub}</div>${q.q}${fb?'':`<input id="tin" class="tin" dir="rtl" lang="ar" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="اكتب هنا"><div class="row" style="margin-top:8px"><button class="btn pri" data-a="tcheck">تحقق</button><button class="btn" data-a="tskip">لا أعرف</button></div>`}</div>`}
+  else body=`<div class="qbox"><div class="small muted">${q.sub}</div>${q.q}</div><div class="opts">${q.opts.map((o,i)=>`<button class="opt ${q.ot||''} ${fb?(i===q.ans?'right':(i===fb.pick?'wrong':'dim')):''}" data-a="opt" data-i="${i}" ${fb?'disabled':''}>${o}</button>`).join('')}</div>`;
+  const fbx=fb&&!sp?`<div class="fb ${fb.ok?'ok':'no'}"><b>${fb.ok?'أحسنت! إجابة صحيحة':(fb.skip?'الإجابة الصحيحة:':'إجابة غير صحيحة')}</b><div class="ex"><span class="qw">${w.word}</span><span>${w.mean}</span><span class="ay sm">${ar(w.ayah)}</span></div></div><button class="btn pri big" data-a="nextq">${s.i+1>=s.total?'عرض النتيجة':'التالي'}</button>`:'';
+  return`<div class="sess">${head}${body}${fbx}</div>`;
+}
+function answer(ok,pick,skip){
+  const s=session,q=curQ();
+  record(q.id,ok);if(ok)s.score++;else s.missed.add(q.id);
+  if(s.kind==='speed'){s.total++;s.fb={ok,pick};render();setTimeout(()=>{if(session===s&&s.type==='quiz'){s.fb=null;nextSpeed();render()}},ok?380:900);return}
+  s.fb={ok,pick,skip};render();
+}
+function nextQ(){const s=session;s.i++;s.fb=null;if(s.i>=s.total){const perfect=s.score===s.total&&s.total>=10;if(perfect){S.perfect=(S.perfect||0)+1;save()}finish({title:s.title,score:s.score,total:s.total,missed:[...s.missed],again:()=>startQuiz(s.kind,s.sc,s.count)})}else render()}
+/* مطابقة */
+function startMatch(ids,count){
+  const n=Math.min(count||ids.length,ids.length,24);const pick=shuf(ids).slice(0,n);const ch=[];for(let i=0;i<pick.length;i+=6)ch.push(pick.slice(i,i+6));
+  if(ch.length>1&&ch[ch.length-1].length<3){const l=ch.pop();ch[ch.length-1].push(...l)}
+  session={type:'match',title:'مطابقة',ch,ci:0,sel:null,done:new Set(),wrong:new Set(),ok:0,total:pick.length,sc:qs.scope,count};layoutMatch();render();
+}
+function layoutMatch(){const c=session.ch[session.ci];session.L=shuf(c);session.R=shuf(c);session.done=new Set();session.sel=null}
+function rMatch(){
+  const s=session;
+  return`<div class="sess"><div class="top"><button class="btn" data-a="end">إنهاء</button><div class="bar"><i style="width:${s.ok/s.total*100}%"></i></div><span class="small muted">${ar(s.ok)} / ${ar(s.total)}</span></div>
+  <div class="qbox" style="padding:14px"><div class="small muted">اضغط كلمة ثم معناها (أو العكس) · المجموعة ${ar(s.ci+1)} من ${ar(s.ch.length)}</div></div>
+  <div class="mt"><div class="col">${s.L.map(id=>`<button class="opt w ${s.done.has(id)?'gone':''} ${s.sel&&s.sel.side==='L'&&s.sel.id===id?'sel':''}" data-a="mt" data-side="L" data-id="${id}">${W[id].word}</button>`).join('')}</div>
+  <div class="col">${s.R.map(id=>`<button class="opt ${s.done.has(id)?'gone':''} ${s.sel&&s.sel.side==='R'&&s.sel.id===id?'sel':''}" data-a="mt" data-side="R" data-id="${id}">${W[id].mean}</button>`).join('')}</div></div></div>`;
+}
+function matchTap(side,id,el){
+  const s=session;
+  if(!s.sel||s.sel.side===side){s.sel=s.sel&&s.sel.side===side&&s.sel.id===id?null:{side,id};return render()}
+  if(s.sel.id===id){
+    s.done.add(id);record(id,!s.wrong.has(id));if(!s.wrong.has(id))s.ok++;s.sel=null;
+    if(s.done.size>=s.ch[s.ci].length){
+      if(s.ci+1<s.ch.length){s.ci++;layoutMatch();return render()}
+      return finish({title:s.title,score:s.ok,total:s.total,missed:[...s.wrong],again:()=>startMatch(scopeIds(s.sc),s.count)});
+    }
+    return render();
+  }
+  s.wrong.add(s.sel.id);s.wrong.add(id);const a=s.sel;s.sel=null;render();
+  document.querySelectorAll('.mt .opt').forEach(b=>{if(b.dataset.id==a.id&&b.dataset.side==a.side||b.dataset.id==id&&b.dataset.side==side)b.classList.add('shake')});
+}
+/* النتيجة */
+function finish(r){
+  if(session&&session.tm)clearInterval(session.tm);
+  const pct=r.total?r.score/r.total:0;if(!r.speed&&r.score>=0)S.xp+=Math.round(pct*10);save();
+  session={type:'result',r};render();
+}
+function rResult(){
+  const r=session.r,pct=r.total?Math.round(r.score/r.total*100):0;
+  const stars=r.speed?'':(pct>=90?'★★★':pct>=70?'★★☆':pct>=40?'★☆☆':'☆☆☆');
+  const msg=r.speed?`أفضل نتيجة لك: ${ar(S.best.speed||0)}`:pct>=90?'ممتاز! إتقان رائع.':pct>=70?'جيد جدًا، استمر.':pct>=40?'بداية طيبة. كرّر الكلمات المتعثّرة.':'لا بأس، التكرار طريق الإتقان.';
+  return`<div class="sess"><div class="card res"><h2>${r.title}</h2>${stars?`<div class="stars">${stars}</div>`:''}
+  <div style="font-size:54px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2">${r.speed?ar(r.score):ar(r.score)+' / '+ar(r.total)}</div><div class="muted">${msg}</div>
+  <div class="row" style="justify-content:center;margin-top:8px"><button class="btn pri big" data-a="again">أعد المحاولة</button>${r.missed.length?`<button class="btn gold big" data-a="reviewMissed">راجع الأخطاء (${ar(r.missed.length)})</button>`:''}<button class="btn big" data-a="go" data-v="home">الرئيسية</button></div></div>
+  ${r.missed.length?`<div class="lbl">كلمات تحتاج مراجعة</div>${r.missed.map(id=>`<div class="miss"><span class="qw">${W[id].word}</span><span>${W[id].mean}</span><span class="ay sm">${ar(W[id].ayah)}</span></div>`).join('')}`:''}</div>`;
+}
+function endSession(silent){if(session&&session.tm)clearInterval(session.tm);session=null;if(!silent)render()}
+
+/* ======================= المفردات ======================= */
+function filtered(){
+  const q=norm(wf.q);
+  return W.filter(w=>(wf.sec==='all'||w.sec===+wf.sec)&&(wf.st==='all'||(wf.st==='fav'?(wst(w.id)&&wst(w.id).fav):status(w.id)===wf.st))&&(!q||norm(w.word).includes(q)||norm(w.mean).includes(q)||String(w.ayah)===q));
+}
+function wordRows(){
+  const l=filtered();if(!l.length)return`<div class="card muted" style="grid-column:1/-1;text-align:center">لا توجد نتائج مطابقة.</div>`;
+  return l.map(w=>{const f=wst(w.id)&&wst(w.id).fav;return`<div class="wr"><span class="ay sm">${ar(w.ayah)}</span><span class="dot ${status(w.id)}" title="${SN[status(w.id)]}"></span><span class="wd">${w.word}</span><div class="mn ${wf.hide?'hid':''}" ${wf.hide?'data-a="peek"':''}>${w.mean}</div>${canSay()?`<button class="ib" data-a="say" data-id="${w.id}" aria-label="استمع">${svg('spk')}</button>`:''}<button class="ib fav" aria-pressed="${!!f}" data-a="favl" data-id="${w.id}" aria-label="مفضلة" style="${f?'color:var(--gold)':''}">${svg('star').replace('<svg','<svg style="fill:'+(f?'currentColor':'none')+'"')}</button></div>`}).join('');
+}
+function rWords(){
+  return`<div class="wrap"><div class="row" style="justify-content:space-between"><div><h1>المفردات</h1><div class="muted">${ar(N)} كلمة من سورة الكهف مرتبة حسب الآيات</div></div></div>
+  <div class="tools"><input id="wq" class="inp s" type="search" placeholder="ابحث عن كلمة أو معنى أو رقم آية" value="${wf.q}" dir="rtl">
+  <select id="wsec" class="inp" aria-label="المقطع"><option value="all">كل المقاطع</option>${SECS.map((s,i)=>`<option value="${i}" ${wf.sec==i&&wf.sec!=='all'?'selected':''}>${s[0]}</option>`).join('')}</select>
+  <select id="wst" class="inp" aria-label="الحالة"><option value="all">كل الحالات</option>${Object.entries(SN).map(([k,v])=>`<option value="${k}" ${wf.st===k?'selected':''}>${v}</option>`).join('')}<option value="fav" ${wf.st==='fav'?'selected':''}>المفضلة</option></select>
+  <button class="chip" id="whide" aria-pressed="${wf.hide}" data-a="hide">إخفاء المعاني للاختبار الذاتي</button></div>
+  <div class="wl" id="wl">${wordRows()}</div></div>`;
+}
+
+/* ======================= الإحصائيات ======================= */
+function badges(){
+  const m=masteredN(),sn=seenN(),st=streak();
+  const secDone=SECS.some((s,i)=>{const ids=scopeIds('s'+i);return ids.length&&ids.every(id=>status(id)==='mastered')});
+  return[['أ','أول خطوة','تعلّمت ١٠ كلمات',sn>=10],['٢٠','عشرون متقنة','أتقنت ٢٠ كلمة',m>=20],['٥٠','خمسون متقنة','أتقنت ٥٠ كلمة',m>=50],['★','سورة كاملة','أتقنت كل الكلمات',m>=N],
+   ['٣','ثلاثة أيام','دراسة ٣ أيام متتالية',st>=3],['٧','أسبوع كامل','دراسة ٧ أيام متتالية',st>=7],['١٠٠','علامة كاملة','اختبار بلا خطأ (١٠ أسئلة فأكثر)',(S.perfect||0)>0],
+   ['٦٠','سريع البديهة','١٥ إجابة في تحدي الدقيقة',(S.best.speed||0)>=15],['ق','أتممت قصة','أتقنت كل كلمات مقطع',secDone]];
+}
+function rStats(){
+  const t=Date.now();let ok=0,bad=0;Object.values(S.w).forEach(w=>{ok+=w.ok;bad+=w.bad});
+  const acc=ok+bad?Math.round(ok/(ok+bad)*100):0;
+  const cnt={new:0,learning:0,review:0,mastered:0};W.forEach(w=>cnt[status(w.id)]++);
+  const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const r=(S.days[key(d)]||{r:0}).r;days.push({r,l:['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'][d.getDay()]})}
+  const mx=Math.max(S.set.goal,...days.map(d=>d.r));
+  const weak=Object.entries(S.w).filter(([id,w])=>w.bad>0).sort((a,b)=>b[1].bad-a[1].bad).slice(0,8);
+  const L=level(),bd=badges();
+  return`<div class="wrap"><h1>تقدّمي</h1>
+  <div class="grid g4"><div class="card stat"><span class="muted small">الدقة</span><b>${ar(acc)}٪</b></div><div class="card stat"><span class="muted small">إجمالي المحاولات</span><b>${ar(ok+bad)}</b></div><div class="card stat"><span class="muted small">أيام متتالية</span><b>${ar(streak())}</b></div><div class="card stat"><span class="muted small">المستوى ${ar(L.n)}</span><b style="font-size:21px">${L.title}</b></div></div>
+  <div class="card"><h3 style="margin-bottom:12px">حالة الكلمات</h3><div class="bar" style="height:16px"><i style="width:${cnt.mastered/N*100}%;background:var(--good)"></i><i class="r" style="width:${cnt.review/N*100}%"></i><i class="l" style="width:${cnt.learning/N*100}%"></i></div>
+  <div class="row small" style="margin-top:12px;gap:20px">${[['mastered','متقنة'],['review','قيد المراجعة'],['learning','قيد التعلّم'],['new','جديدة']].map(([k,l])=>`<span class="row" style="gap:6px"><span class="dot ${k}"></span>${l} <b>${ar(cnt[k])}</b></span>`).join('')}</div></div>
+  <div class="card"><h3>آخر ٧ أيام</h3><div class="days">${days.map(d=>`<div class="d"><em>${d.r?ar(d.r):''}</em><i class="${d.r?'':'z'}" style="height:${d.r/mx*100}%"></i><span>${d.l}</span></div>`).join('')}</div><div class="small muted" style="margin-top:6px">عدد الإجابات في اليوم · الهدف ${ar(S.set.goal)}</div></div>
+  <div class="grid g2"><div class="card"><h3 style="margin-bottom:12px">أكثر الكلمات تعثّرًا</h3>${weak.length?weak.map(([id,w])=>`<div class="miss" style="margin-bottom:8px;background:var(--surface2)"><span class="qw">${W[id].word}</span><span>${W[id].mean}</span><b style="color:var(--bad)">${ar(w.bad)}×</b></div>`).join(''):'<div class="muted">لا أخطاء حتى الآن. ابدأ بجلسة وستظهر هنا.</div>'}</div>
+  <div class="card"><h3 style="margin-bottom:12px">الأوسمة</h3><div class="grid" style="gap:10px">${bd.map(b=>`<div class="badge ${b[3]?'on':''}"><div class="bi">${b[0]}</div><div><b>${b[1]}</b><span>${b[2]}</span></div></div>`).join('')}</div></div></div></div>`;
+}
+
+/* ======================= الإعدادات ======================= */
+function rSettings(){
+  const st=S.set;const ch=(arr,cur,act,d)=>`<div class="chips">${arr.map(([v,l])=>`<button class="chip" aria-pressed="${String(cur)===String(v)}" data-a="${act}" data-v="${v}">${l}</button>`).join('')}</div>`;
+  return`<div class="wrap"><h1>الإعدادات</h1>
+  <div class="card" style="display:flex;flex-direction:column;gap:20px">
+   <div><div class="lbl">المظهر</div>${ch([['auto','تلقائي'],['light','فاتح'],['dark','داكن']],st.theme,'sset','theme')}</div>
+   <div><div class="lbl">حجم خط الكلمات</div>${ch([[0.85,'صغير'],[1,'متوسط'],[1.2,'كبير'],[1.4,'كبير جدًا']],st.size,'ssize')}</div>
+   <div><div class="lbl">هدف الإجابات اليومي</div>${ch([[10,'١٠'],[20,'٢٠'],[30,'٣٠'],[50,'٥٠']],st.goal,'sgoal')}</div>
+   <div><div class="lbl">كلمات جديدة في اليوم</div>${ch([[5,'٥'],[8,'٨'],[12,'١٢'],[20,'٢٠']],st.newPerDay,'snew')}</div>
+   <div><div class="lbl">النطق الصوتي (يعتمد على أصوات الجهاز العربية)</div>${ch([[1,'مفعّل'],[0,'متوقف']],st.tts?1:0,'stts')}</div></div>
+  <div class="card" style="display:flex;flex-direction:column;gap:12px"><h3>نسخة احتياطية</h3><div class="muted small">يُحفظ تقدّمك في متصفح هذا الجهاز. انسخ النص أدناه واحتفظ به لنقل تقدّمك إلى جهاز آخر أو لاستعادته.</div>
+   <textarea id="bk" class="inp" readonly rows="3">${JSON.stringify(S).replace(/</g,"\\u003c")}</textarea>
+   <div class="row"><button class="btn pri" data-a="copybk">نسخ النسخة الاحتياطية</button></div>
+   <div class="lbl" style="margin-top:8px">استعادة من نسخة</div><textarea id="rs" class="inp" rows="3" placeholder="الصق النسخة الاحتياطية هنا"></textarea>
+   <div class="row"><button class="btn" data-a="restore">استعادة</button></div></div>
+  <div class="card" style="display:flex;flex-direction:column;gap:12px"><h3>إعادة الضبط</h3><div class="muted small">يمسح كل تقدّمك وإحصائياتك من هذا الجهاز.</div>
+   <div class="row" id="rz"><button class="btn bad" data-a="resetAsk">مسح التقدّم</button></div></div>
+  <div class="small muted" style="text-align:center">مفردات سورة الكهف مأخوذة من «السراج في بيان غريب القرآن» للدكتور محمد بن عبد العزيز الخضيري (كرسي القرآن الكريم وعلومه، جامعة الملك سعود).</div></div>`;
+}
+
+/* ======================= الأحداث ======================= */
+const A={
+ go:d=>go(d.v),
+ today:()=>{const p=plan();const ids=[...p.due,...p.nw];startCards(ids,'جلسة اليوم')},
+ quick:()=>startQuiz('mix',seenN()>=8?'all':'all',10),
+ startScope:d=>{ls.scope=d.sc;if(!scopeIds(d.sc).length)return toast('لا توجد كلمات في هذا القسم');startCards(scopeIds(d.sc),scopeName(d.sc))},
+ lsc:d=>{ls.scope=d.sc;render()},dir:d=>{S.set.dir=d.d;save();render()},
+ startLs:()=>startCards(scopeIds(ls.scope),scopeName(ls.scope)),
+ qsc:d=>{qs.scope=d.sc;render()},qcount:d=>{qs.count=+d.c;render()},
+ startQuiz:d=>startQuiz(d.k,d.sc||qs.scope,qs.count),
+ rev:()=>{if(session&&session.type==='cards'&&!session.rev){session.rev=true;render()}},
+ grade:d=>grade(d.ok==='1'),
+ end:()=>{endSession();view=view;render()},
+ opt:d=>{const q=curQ();if(session.fb)return;answer(+d.i===q.ans,+d.i)},
+ nextq:()=>nextQ(),
+ tcheck:()=>{const q=curQ(),v=norm(($('#tin')||{}).value||'');if(!v)return toast('اكتب الكلمة أولًا');answer(v===norm(W[q.id].word),null)},
+ tskip:()=>answer(false,null,true),
+ mt:d=>matchTap(d.side,+d.id),
+ again:()=>session&&session.r.again(),
+ reviewMissed:()=>startCards(session.r.missed,'مراجعة الأخطاء'),
+ say:(d,el)=>{say(W[+d.id].word)},
+ fav:d=>{const w=S.w[d.id]||(S.w[d.id]={box:0,due:0,seen:0,ok:0,bad:0,fav:0});w.fav=w.fav?0:1;save();render()},
+ favl:d=>{const w=S.w[d.id]||(S.w[d.id]={box:0,due:0,seen:0,ok:0,bad:0,fav:0});w.fav=w.fav?0:1;save();$('#wl').innerHTML=wordRows()},
+ hide:()=>{wf.hide=!wf.hide;render()},
+ peek:(d,el)=>el.classList.remove('hid'),
+ sset:d=>{S.set.theme=d.v;save();applyPrefs();render()},
+ ssize:d=>{S.set.size=+d.v;save();applyPrefs();render()},
+ sgoal:d=>{S.set.goal=+d.v;save();render()},snew:d=>{S.set.newPerDay=+d.v;save();render()},
+ stts:d=>{S.set.tts=d.v==='1';save();render()},
+ copybk:()=>{const t=JSON.stringify(S);const ta=$('#bk');ta.value=t;ta.select();try{navigator.clipboard.writeText(t).then(()=>toast('تم النسخ'),()=>toast('حدّد النص وانسخه يدويًا'))}catch(e){toast('حدّد النص وانسخه يدويًا')}},
+ restore:()=>{try{const j=JSON.parse($('#rs').value);if(!j||typeof j.w!=='object')throw 0;S={...def(),...j,set:{...def().set,...(j.set||{})}};save();applyPrefs();toast('تمت الاستعادة');render()}catch(e){toast('النسخة غير صالحة')}},
+ resetAsk:()=>{$('#rz').innerHTML='<span>هل أنت متأكد؟</span><button class="btn bad" data-a="resetDo">نعم، امسح</button><button class="btn" data-a="resetNo">إلغاء</button>'},
+ resetNo:()=>render(),
+ resetDo:()=>{S=def();save();applyPrefs();toast('تم مسح التقدّم');render()}
+};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t)return;const f=A[t.dataset.a];if(f)f(t.dataset,t)});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&e.target.id==='tin'){e.preventDefault();A.tcheck()}
+  else if((e.key===' '||e.key==='Enter')&&e.target.classList&&e.target.classList.contains('fc')){e.preventDefault();A.rev()}
+});
+document.addEventListener('input',e=>{if(e.target.id==='wq'){wf.q=e.target.value;$('#wl').innerHTML=wordRows()}});
+document.addEventListener('change',e=>{if(e.target.id==='wsec'){wf.sec=e.target.value;$('#wl').innerHTML=wordRows()}if(e.target.id==='wst'){wf.st=e.target.value;$('#wl').innerHTML=wordRows()}});
+const h=(location.hash||'').slice(1);if(VIEWS.some(v=>v[0]===h))view=h;
+window.addEventListener('hashchange',()=>{const x=location.hash.slice(1);if(VIEWS.some(v=>v[0]===x)&&x!==view){endSession(true);view=x;render()}});
+applyPrefs();render();
+</script>
+
+</body></html>
